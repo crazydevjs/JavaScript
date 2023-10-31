@@ -34,3 +34,4 @@ console.log(url.includes('deepak'));
 console.log(url.includes('hitesh'));
 
 console.log(gameName.split('-'));
+console.log(gameName.split(''));
