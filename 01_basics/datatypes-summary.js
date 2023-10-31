@@ -41,3 +41,28 @@ console.log(typeof myObj); // object
 console.log(typeof myFunction); // function
 console.log(typeof heros); // object
 console.log(typeof anotherId); // symbol
+
+
+// ******************************Memory*************************
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+let myYoutubename = "crazydev"
+
+let anothername = myYoutubename
+anothername = "deepakmishra"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+let userOne = {
+    email: "user@goole.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "deepak@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
