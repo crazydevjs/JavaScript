@@ -60,4 +60,51 @@ promiseFour.then(function(user){
     console.log("The promise is either resolved or reject");
     
 })
+const promiseFive = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true
+        if(!error){
+            resolve({username: "javascript", password: "123"})
+        } else {
+            reject('ERROR: JS went wrong')
+        }
+    }, 1000)
+});
 
+async function consumePromiseFive(){
+    try {
+        const respone = await promiseFive
+        console.log(respone);
+    } catch (error) {
+        console.log(error);
+        
+    }
+    
+}
+consumePromiseFive()
+
+// async function getAllUser(){
+//     try {
+//         const response = await fetch('https://api.github.com/users/crazydevjs')
+//         const data = await response.json()
+//         console.log(data);
+//     } catch (error) {
+//         console.log("E: ", error);
+        
+//     }
+    
+// }
+
+// getAllUser()
+
+fetch('https://api.github.com/users/crazydevjs')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+    
+})
+.catch((error) => {
+    console.log(error); 
+})
